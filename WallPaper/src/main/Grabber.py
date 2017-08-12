@@ -23,7 +23,7 @@ searchUrl=homeUrl+"/search?categories=111&purity=111&resolutions=3840x2160&sorti
 resolutions=["3840x2160","2560x1440","1920x1080"]
 #类别条件'普通','动漫','人物'可叠加
 categories=["100","010","001"]
-#内容类型'科幻','素描','重口'
+#内容类型'科幻','素描','重口'可叠加
 puritys=["100","010","001"]
 #排序字段'随机','相关性','日期','浏览量','喜好'
 sortings=["random","relevance","dateAdded","views","favorites"]
