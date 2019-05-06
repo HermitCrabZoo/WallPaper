@@ -167,9 +167,9 @@ class Float(Numeric):
 
 def control():
     # 类别条件'普通','动漫','人物'可叠加
-    categories = map(lambda x: "".join(x), itertools.product(["0", "1"], repeat=3))
+    categories = list(map(lambda x: "".join(x), itertools.product(["0", "1"], repeat=3)))
     # 内容类型'科幻','素描','重口'可叠加
-    puritys = map(lambda x: "".join(x), itertools.product(["0", "1"], repeat=3))
+    puritys = list(map(lambda x: "".join(x), itertools.product(["0", "1"], repeat=3)))
     # 排序字段'随机','相关性','日期','浏览量','喜好','榜单'
     sortings = ["random", "relevance", "date_added", "views", "favorites", "toplist"]
     # 排序'降序','升序'
@@ -223,7 +223,7 @@ def control():
     for i in range(page, args.to + 1):
         if count >= limit:
             break
-        params.update(page=page)
+        params.update(page=i)
         url = "{}/{}?{}".format(home_url, args.mode, parse.urlencode(params))
         logger.info("page {}：{}".format(i, url))
         show_urls = peep(url)
