@@ -183,7 +183,7 @@ def control():
 
     # 校验参数
     parser = ArgumentParser(description="Awesome Wallpaper提取", epilog="此致，敬礼！")
-    parser.add_argument("-dir", type=AccessiblePath(), dest="dir", metavar="<dir>", help="保存的目录，必选。", required=True)
+    parser.add_argument("-d", "--dir", type=AccessiblePath(), dest="dir", metavar="<dir>", help="保存的目录，必选。", required=True)
     parser.add_argument("-mode", type=str, dest="mode", choices=["search", "random", "toplist", "latest"], help="搜索模式，默认random，仅search、toplist模式支持其他过滤条件。", default="random")
     parser.add_argument("-q", "--query", type=str, dest="query", metavar="<query>", help="搜索关键字，默认空。", default="")
     parser.add_argument("-c", "--category", type=str, dest="category", metavar="{"+",".join(categories)+"}", choices=categories, help="分类：'普通'、'动漫'、'人物'；(1：包含，0：不包含)，可叠加，默认110。", default="111")
